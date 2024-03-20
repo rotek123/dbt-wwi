@@ -21,5 +21,4 @@ with
 
     )
 
-select *
-from application_countries
+select * from application_countries
