@@ -4,7 +4,7 @@ config-version: 2
 
 profile: 'default'
 
-source-paths: ["definitions"]
+model-paths: ["definitions"]
 analysis-paths: ["analysis"]
 test-paths: ["tests"]
 seed-paths: ["seeds"]
@@ -16,7 +16,7 @@ clean-targets:
     - "target"
     - "dbt_modules"
 
-definitions:
+models:
   snowflake_workshop:
     raw:
       materialized: 
