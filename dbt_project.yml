@@ -4,7 +4,7 @@ config-version: 2
 
 profile: 'default'
 
-source-paths: ["models"]
+source-paths: ["definitions"]
 analysis-paths: ["analysis"]
 test-paths: ["tests"]
 seed-paths: ["seeds"]
@@ -16,11 +16,14 @@ clean-targets:
     - "target"
     - "dbt_modules"
 
-models:
+definitions:
   snowflake_workshop:
-    staging:
+    raw:
+      materialized: 
+      snowflake_warehouse: pc_dbt_wh
+    clean:
       materialized: view
       snowflake_warehouse: pc_dbt_wh
-    marts:
+    model:
       materialized: table
       snowflake_warehouse: pc_dbt_wh
