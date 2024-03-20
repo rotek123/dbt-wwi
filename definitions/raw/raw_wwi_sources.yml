@@ -8,3 +8,5 @@ sources:
     tables:
       - name: application_countries
         description: Contains data from application countries
+      - name: ext_sales_customer_categories
+        description: Contains data about customer categories
