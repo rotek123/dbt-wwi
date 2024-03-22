@@ -2,7 +2,7 @@ name: 'rosan'
 version: '1.0.0'
 config-version: 2
 
-profile: 'default'
+profile: 'sf-dbt-test'
 
 model-paths: ["definitions"]
 analysis-paths: ["analysis"]
@@ -17,13 +17,13 @@ clean-targets:
     - "dbt_modules"
 
 models:
-  snowflake_workshop:
-    raw:
-      materialized: 
-      snowflake_warehouse: pc_dbt_wh
+  snowflake_project:
+    # Applies to all files under models/.../
     clean:
       materialized: view
+      database: data_evolution_admin
       snowflake_warehouse: pc_dbt_wh
     model:
       materialized: table
+      database: data_evolution_admin
       snowflake_warehouse: pc_dbt_wh
