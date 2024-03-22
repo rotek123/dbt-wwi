@@ -1,0 +1,45 @@
+version: 2
+
+sources:
+  - name: raw_wwi
+    description: source raw_wwi data
+    database: data_evolution_admin
+    schema: raw_wwi
+    tables:
+      - name: application_countries
+        description: Contains data from application countries
+      - name: ext_sales_customercategories
+        description: Contains data about customer categories
+        external:
+          location: "@my_azure_stage"  # reference an existing external stage
+          file_format: "my_csv_ff"      # fully specified here, or reference an existing file format
+      - name: ext_sales_customers
+        description: Contains data about customers
+        external:
+          location: "@my_azure_stage"  # reference an existing external stage
+          file_format: "my_csv_ff"      # fully specified here, or reference an existing file format
+      - name: ext_sales_invoicelines
+        description: Contains data about price, quantity, tax, etc.
+        external:
+          location: "@my_azure_stage"  # reference an existing external stage
+          file_format: "my_csv_ff"      # fully specified here, or reference an existing file format
+      - name: ext_sales_invoices
+        description: Contains data about invoices
+        external:
+          location: "@my_azure_stage"  # reference an existing external stage
+          file_format: "my_csv_ff"      # fully specified here, or reference an existing file format
+      - name: ext_warehouse_stockgroups
+        description: Contains data about stock groups
+        external:
+          location: "@my_azure_stage"  # reference an existing external stage
+          file_format: "my_csv_ff"      # fully specified here, or reference an existing file format
+      - name: ext_warehouse_stockitem
+        description: Contains data about stock items
+        external:
+          location: "@my_azure_stage"  # reference an existing external stage
+          file_format: "my_csv_ff"      # fully specified here, or reference an existing file format
+      - name: ext_warehouse_stockitemstockgroups
+        description: Contains data about stock item stock groups
+        external:
+          location: "@my_azure_stage"  # reference an existing external stage
+          file_format: "my_csv_ff"      # fully specified here, or reference an existing file format
